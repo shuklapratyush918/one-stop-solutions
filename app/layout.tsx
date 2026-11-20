@@ -3,46 +3,75 @@ import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "One Stop Solutions | We Make You Visible",
+  metadataBase: new URL("https://www.onestopsolution.net"),
+
+  title: "One Stop Solutions | Outdoor Advertising Agency in Kanpur",
+
   description:
-    "One Stop Solutions is an offline marketing and advertising agency offering outdoor advertising, hoardings, unipoles, transit media, auto branding, LED van campaigns, signage and brand promotions across Uttar Pradesh.",
+    "One Stop Solutions is a Kanpur-based offline marketing and outdoor advertising agency offering hoardings, unipoles, transit media, auto branding, LED van campaigns, signage and brand promotions across Uttar Pradesh.",
+
   keywords: [
     "One Stop Solutions",
+    "advertising agency in Kanpur",
+    "outdoor advertising in Kanpur",
     "offline marketing agency",
-    "outdoor advertising",
     "OOH advertising",
     "hoarding advertising",
     "unipole advertising",
     "auto branding",
     "LED van advertising",
-    "Kanpur advertising agency",
-    "Uttar Pradesh marketing agency",
+    "transit media advertising",
+    "brand promotion in Uttar Pradesh",
   ],
+
   applicationName: "One Stop Solutions",
+
+  alternates: {
+    canonical: "https://www.onestopsolution.net",
+  },
+
   openGraph: {
     title: "One Stop Solutions | We Make You Visible",
     description:
-      "Offline marketing, outdoor advertising and on-ground brand activation solutions across Uttar Pradesh.",
-    type: "website",
+      "Your trusted partner for outdoor advertising, offline marketing and on-ground brand promotions across Uttar Pradesh.",
+    url: "https://www.onestopsolution.net",
     siteName: "One Stop Solutions",
     locale: "en_IN",
+    type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "One Stop Solutions | We Make You Visible",
     description:
-      "Offline marketing, outdoor advertising and on-ground brand activation solutions across Uttar Pradesh.",
+      "Outdoor advertising, offline marketing and brand activation solutions across Uttar Pradesh.",
   },
-  robots: { index: true, follow: true },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <body className="min-h-full">{children}</body>
     </html>
   );
