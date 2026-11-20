@@ -72,7 +72,42 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AdvertisingAgency",
+        name: "One Stop Solutions",
+        url: "https://www.onestopsolution.net",
+        description:
+          "Offline marketing and outdoor advertising agency providing hoardings, unipoles, transit media, auto branding, LED van campaigns and brand promotions.",
+        telephone: "+919129412039",
+        email: "1stopsoluions0512@gmail.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "40-1A, Hardev Nagar, Barra",
+          addressLocality: "Kanpur",
+          addressRegion: "Uttar Pradesh",
+          postalCode: "208027",
+          addressCountry: "IN",
+        },
+        areaServed: [
+          {
+            "@type": "City",
+            name: "Kanpur",
+          },
+          {
+            "@type": "State",
+            name: "Uttar Pradesh",
+          },
+        ],
+      }),
+    }}
+  />
+  {children}
+</body>
     </html>
   );
 }
